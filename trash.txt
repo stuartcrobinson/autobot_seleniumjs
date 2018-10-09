@@ -1,0 +1,45 @@
+,
+    // "babel-cli": "^6.26.0",
+    // "babel-polyfill": "^6.26.0"
+
+        "babel-core": "^7.0.0-bridge.0",
+
+
+GLOBAL afterEach ########### currentTest: [object Object]
+{
+  "title": "demo2222222222",
+  "body": "function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }",
+  "async": 0,
+  "sync": true,
+  "timedOut": false,
+  "pending": false,
+  "type": "test",
+  "file": "/Users/stuartrobinson/repos/mochaseleniumjs/autobot/test/demo/goo2.js",
+  "parent": "#<Suite>",
+  "ctx": "#<Context>",
+  "timer": {},
+  "duration": 3,
+  "state": "failed",
+  "err": {}
+}
+Suite {
+  title: 'Google Search 2222222',
+  ctx:
+   Context {
+     _runnable:
+      {
+  "title": "demo2222222222",
+  "body": "function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }",
+  "async": 0,
+  "sync": true,
+  "timedOut": false,
+  "pending": false,
+  "type": "test",
+  "file": "/Users/stuartrobinson/repos/mochaseleniumjs/autobot/test/demo/goo2.js",
+  "parent": "#<Suite>",
+  "ctx": "#<Context>",
+  "timer": {},
+  "duration": 3,
+  "state": "failed",
+  "err": {}
+},

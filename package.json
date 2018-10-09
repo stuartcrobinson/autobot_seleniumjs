@@ -1,0 +1,33 @@
+{
+  "name": "autobot_seleniumjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "build": "babel src -d lib",
+    "start": "npm run build && node dist/index.js",
+    "node": "npm run build && node lib/demo/class.js",
+    "mochap": "./node_modules/mocha-parallel-tests/dist/bin/cli.js --require @babel/polyfill --require @babel/register --timeout 600000 ",
+    "bot": "npm run mochap",
+    "mocha": "./node_modules/mocha/bin/mocha  --require @babel/polyfill --require @babel/register --timeout 600000 "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "mocha-parallel-tests": "^2.0.4",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "string-argv": "^0.1.1",
+    "yargs-parser": "^11.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.4"
+  }
+}
