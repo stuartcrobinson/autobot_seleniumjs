@@ -1,4 +1,4 @@
-import { Page, AbElement, currentTest } from "../../../autobot";
+import { Page, AbElement, currentTest } from "../../../../autobot_framework/autobot";
 
 export const googlePage = new class Google{
     constructor() { this.url = 'https://www.google.com'; }

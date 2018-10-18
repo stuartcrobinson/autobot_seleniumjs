@@ -1,6 +1,6 @@
 const assert = require('assert');
 // const autobot = require('../../autobot');
-const asdf = require('./dummyTestStackTraceClass')
+// const asdf = require('./dummyTestStackTraceClass')
 
 
 const { Browser, Builder, By, Key, until } = require('selenium-webdriver');
@@ -8,7 +8,7 @@ const { ignore, suite } = require('selenium-webdriver/testing');
 
 // suite(function (env) {
 describe('Google Search 2222222', function () {
-    // let driver;
+    let driver;
     this.timeout(15000);
 
     before(async function () {
@@ -25,22 +25,25 @@ describe('Google Search 2222222', function () {
     it('demo2222222222', async function () {
         // this.timeout(10000);
         console.log('andrey_dobra')
-        await asdf.asdf(driver);
+        // await asdf.asdf(driver);
 
         await driver.get('https://www.google.com/ncr');
+        await driver.wait(until.elementLocated(By.name('q')), 6000);
+
+        // await driver.findElement(By.name('q')).sendKeys('lalala', Key.RETURN);
         await driver.findElement(By.name('q')).sendKeys('lalala', Key.RETURN);
         await driver.wait(until.titleIs('lalala - Google Search'), 1000);
     });
-    it('demo2222222222 222!', async function () {
-        // this.timeout(10000);
-        console.log('andrey_dobra 2')
-        await driver.wait(until.titleIs('lalala - Google Search'), 1000);
-    });
-    it('demo2222222222 222 fail!!', async function () {
-        // this.timeout(10000);
-        console.log('andrey_dobra 2')
-        assert(false, "should be false just to fail the test");
-    });
+    // it('demo2222222222 222!', async function () {
+    //     // this.timeout(10000);
+    //     console.log('andrey_dobra 2')
+    //     await driver.wait(until.titleIs('lalala - Google Search'), 1000);
+    // });
+    // it('demo2222222222 222 fail!!', async function () {
+    //     // this.timeout(10000);
+    //     console.log('andrey_dobra 2')
+    //     assert(false, "should be false just to fail the test");
+    // });
 
     // // The ignore function returns wrappers around describe & it that will
     // // suppress tests if the provided predicate returns true. You may provide

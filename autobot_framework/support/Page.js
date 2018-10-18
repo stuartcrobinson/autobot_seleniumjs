@@ -1,4 +1,5 @@
-import {AbElement} from '../autobot'
+import { AbElement, driver } from '../autobot';
+// import {driver} from ''
 
 
 export class Page {
@@ -10,9 +11,15 @@ export class Page {
         for (var propName in this) {
             let propValue = this[propName]
             if (propValue instanceof AbElement) {
-                propValue.name = propName
+                propValue.stuartname = propName
             }
         }
+    }
+
+    async loadPage(url) {
+        await driver.get(url);
+        // console.log("here after get url " + url)
+        await this.waitForLoad();
     }
 
 
@@ -33,7 +40,10 @@ export class Page {
 
         for (let i = 0; i < this.loadCriteriaElements.length; i++) {
             let element = this.loadCriteriaElements[i];
-            await element.waitForExist();
+            // console.log("here waitForLoad: " + element);
+            // console.log(element)
+
+            await element.waitForExist(12000);
         }
     }
 

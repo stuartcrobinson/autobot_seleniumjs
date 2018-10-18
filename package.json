@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
-    "build": "babel src -d lib",
+    "build": "babel src_demo/demo -d lib",
     "start": "npm run build && node dist/index.js",
-    "node": "npm run build && node lib/demo/class.js",
+    "node": "npm run build && node lib/code.js",
     "mochap": "./node_modules/mocha-parallel-tests/dist/bin/cli.js --require @babel/polyfill --require @babel/register --timeout 600000 ",
     "bot": "npm run mochap",
     "mocha": "./node_modules/mocha/bin/mocha  --require @babel/polyfill --require @babel/register --timeout 600000 "
@@ -15,11 +15,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/helper-module-imports": "^7.0.0",
+    "babel-preset-bluebird": "^1.0.1",
+    "bluebird": "^3.5.2",
     "chai": "^4.2.0",
+    "clarify": "^2.1.0",
+    "colors": "^1.3.2",
+    "dateformat": "^3.0.3",
+    "filenamify": "^2.1.0",
+    "fs-extra": "^7.0.0",
+    "html-entities": "^1.2.1",
+    "longjohn": "^0.2.12",
     "mocha": "^5.2.0",
     "mocha-parallel-tests": "^2.0.4",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "string-argv": "^0.1.1",
+    "trace": "^3.1.0",
     "yargs-parser": "^11.0.0"
   },
   "devDependencies": {
@@ -28,6 +39,8 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
-    "babel-loader": "^8.0.4"
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-async-to-bluebird": "^1.1.1",
+    "babel-plugin-transform-promise-to-bluebird": "^2.0.0"
   }
 }

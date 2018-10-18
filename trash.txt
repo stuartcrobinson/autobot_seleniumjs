@@ -43,3 +43,103 @@ Suite {
   "state": "failed",
   "err": {}
 },
+
+
+
+
+
+
+
+
+
+
+
+        console.log("##############################################################################################################")
+        console.log("################################################  wtf  #######################################################")
+        console.log("##############################################################################################################")
+
+        console.log("this.currentTest")
+        console.log(this.currentTest)
+        console.log()
+
+        /*
+        
+        
+        ERROR OBJHEJCT>>??
+        
+        */
+
+
+
+
+       console.log(" Object.getOwnPropertyNames( this.currentTest.err")
+       console.log( Object.getOwnPropertyNames(this.currentTest.err))
+
+       console.log(" this.currentTest.err")
+       console.log( this.currentTest.err)
+        console.log(" this.currentTest.err name")
+        console.log( this.currentTest.err.name + ' yesssss')
+        console.log(" this.currentTest.err message")
+        console.log( this.currentTest.err.message+ ' yesssss')
+        console.log(" this.currentTest.err stack")
+        console.log( this.currentTest.err.stack+ ' yesssss')
+        console.log()
+
+        console.log("this.currentTest.err")
+        console.log(this.currentTest.err)
+        console.log()
+
+        console.log("this.currentTest.err + 'hello'")
+        console.log(this.currentTest.err + 'hello')
+        console.log()
+
+        console.log("this.currentTest.err[0]")
+        console.log(this.currentTest.err[0])
+        console.log()
+
+        console.log("stringify this.currentTest.err")
+        console.log(JSON.stringify(this.currentTest.err))
+        console.log()
+
+        console.log("this.currentTest.err properties and values BEGIN:")
+
+        for (var propName in this.currentTest.err) {
+            let propValue = this.currentTest.err[propName]
+            console.log("this.currentTest.err wtffff " + propName, propValue);
+        }
+
+        console.log("this.currentTest.err properties and values END:")
+
+        console.log("--------------------------------------------------------------------------------------------------------------")
+        console.log("################################################  end  #######################################################")
+        console.log("--------------------------------------------------------------------------------------------------------------")
+
+        // console.log(stackStr)
+
+
+        // console.log("typeof this.currentTest.err")
+        // console.log(typeof this.currentTest.err)
+
+        // console.log("this.currentTest.err")
+        // console.log(this.currentTest.err)
+
+        // const ddd = this.currentTest.err
+
+        // console.log("ddd")
+        // console.log(ddd.length)
+
+        // console.log("ddd+ddd")
+        // console.log(ddd + ddd)
+
+
+        // console.log("this.currentTest.err[0]")
+        // console.log(this.currentTest.err[0])
+
+        // console.log("stringify this.currentTest.err")
+        // console.log(JSON.stringify(this.currentTest.err))
+
+
+        // for (var propName in this.currentTest.err) {
+        //     let propValue = this.currentTest.err[propName]
+        //     console.log("this.currentTest.err wtffff " + propName, propValue);
+        // }

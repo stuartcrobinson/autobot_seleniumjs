@@ -1,5 +1,5 @@
 const assert = require('assert');
-const autobot = require('../../autobot');
+const autobot = require('../../../autobot_framework/autobot');
 
 
 const { Browser, Builder, By, Key, until } = require('selenium-webdriver');
@@ -9,8 +9,8 @@ const { ignore, suite } = require('selenium-webdriver/testing');
 // const { Browser, Builder, By, Key, until } = require('selenium-webdriver');
 // const { ignore, suite } = require('selenium-webdriver/testing');
 
-import { AbElement, driver } from '../../autobot';
-import { googlePage } from '../../object/wordsmith/page/google';
+import { AbElement, driver } from '../../../autobot_framework/autobot';
+import { googlePage } from '../../support/wordsmith/page/google';
 
 // var asdf = require('../../object/wordsmith/page/google')
 

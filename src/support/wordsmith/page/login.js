@@ -1,29 +1,21 @@
-import { Page, AbElement, currentTest, loadPage, driver } from "../../../../autobot_framework/autobot";
-var assert = require('chai').assert;
+import { assert } from 'chai';
+import { AbElement, Page } from "../../../../autobot_framework/autobot";
+import {toaster} from '../component/toaster'
 
+export const loginPage = new class Login extends Page {
 
-
-export const loginPage = new class Login extends Page{
-
-    // constructor() { this.url = 'https://www.google.com'; }
-
-    constructor(){
-        super(null);
-        // this.cat = "kitty cat";
+    constructor() {
+        super();
         this.emailInput = new AbElement('input.email').tagAsLoadCriterion();
-        this.passwordInput = new AbElement( 'input.password').tagAsLoadCriterion(); 
-        this.logInButton = new AbElement( 'input[value="Log In"]'); 
-        // super.loadCriteriaElements = [this.emailInput, this.passwordInput];
-
+        this.passwordInput = new AbElement('input.password').tagAsLoadCriterion();
+        this.logInButton = new AbElement('input[value="Log In"]');
+        this.toaster_signedOutSuccessfully = toaster.withMessage("Signed out successfully."); 
+        this.toaster_invalidEmailOrPwd = toaster.withMessage("Invalid Email or password."); 
         super.nameElements();
-        console.log("this.loadCriteriaElements");
-        console.log(this.loadCriteriaElements);
-
     }
 
-    // get emailInput() { return new AbElement(this, 'emailInput', 'input.email'); }
-    // get passwordInput() { return new AbElement(this, 'passwordInput', 'input.password'); }
-    // get logInButton() { return new AbElement(this, 'logInButton', 'input[value="Log In"]'); }
+    // get toaster_signedOutSuccessfully() { return ToasterComp.withMessage("Signed out successfully."); }
+    // get toaster_invalidEmailOrPwd() { return ToasterComp.withMessage("Invalid Email or password."); }
 
 
     async logIn(email, password, url) {
@@ -31,27 +23,20 @@ export const loginPage = new class Login extends Page{
         assert.isDefined(email, "email should be defined")
         assert.isDefined(password, "password should be defined")
 
-        //TODO how to deal with opens?  declare per test?  embed in certain/all actions?
-        // autobot.goToUrl(url);
+        // await loadPage(url);
 
-        //TODO move this to autobot or something.  but why says "not a function" ?????
-        // browser.url(url);
-        await loadPage(url);
+        // super.
+        await this.loadPage(url);
+
+        // console.log("page is loaded");
+
         // var screenshotId = livy.logAction("Load " + url);
         // livy.setMouseoverEventScreenshotFunction(screenshotId);
 
         await this.emailInput.sendKeys(email);
         await this.passwordInput.sendKeys(password);
         await this.logInButton.click();
-        // this.logInButton.waitForNotExist();  //this can't be here for when we want to test invalid login creds
-        // so actions must confirm they're at the right spot BEFORE execution
 
-
-        // LoginPage.open();
-        // LoginPage.emailInput.setValue(email);
-        // LoginPage.passwordInput.setValue(password);
-        // LoginPage.logInButton.click();
-        // LoginPage.logInButton.waitForNotExist();
     }
 
 }();
